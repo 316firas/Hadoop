@@ -1,0 +1,30 @@
+#Hadoop basics
+#view lists of contents
+hadoop fs -ls
+
+#create dir
+hadoop fs -mkdir cool
+
+#create empty file
+hadoop fs -touchz hello.txt
+
+#edit file
+hadoop fs -gedit hello.txt
+
+#copy to hdfs
+hadoop fs -copyFromLocal ciao.text cool
+#view file
+hadoop fs -cat cool/ciao.txt
+ #move file
+hadoop fs -mv cool/ciao.txt newdir/
+
+#checksum
+hadoop fs -checksum cool/ciao.txt
+
+#Replication
+hadoop fs -getrep -w 3 cool/ciao.txt
+
+#change modification
+hadoop fs -chmod 777 cool/ciao.txt
+#get attributes
+hadoop fs -getfattr -d cool/ciao.txt   
